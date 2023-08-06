@@ -1,17 +1,15 @@
-import { Box, Button, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import Header from "./layout/Header";
-import KakaoChannelButton from "./components/KakaoChannelButton";
+import MainContent from "./main/MainContent";
 
 function App() {
   return (
     <Container
       maxWidth={"xs"}
-      style={{ backgroundColor: "ghostwhite", padding: 0, height: "100vh" }}
+      sx={{ padding: "0 !important", bgcolor: "#FEEEBD", height: "100vh" }}
     >
       <Header />
-      <Box display="flex" justifyContent="center" padding={1}>
-        <KakaoChannelButton></KakaoChannelButton>
-      </Box>
+      <MainContent></MainContent>
     </Container>
   );
 }

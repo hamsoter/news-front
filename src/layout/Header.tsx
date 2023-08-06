@@ -3,13 +3,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 const Header = () => {
   return (
-    <AppBar position="static" color="secondary">
+    <AppBar
+      position="static"
+      sx={{ background: "#FEEEBD", color: "#121212", boxShadow: "0 0 0 0 !important" }}
+    >
       <Toolbar variant="dense">
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" color="inherit" component="div">
-          몽땅뉴스
+        <Typography variant="h6" fontFamily={"Pretendard-Regular"} component="div">
+          빵이의 한줄 뉴스
         </Typography>
       </Toolbar>
     </AppBar>
