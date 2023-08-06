@@ -16,6 +16,7 @@ function KakaoChannelButton() {
         container: "#kakao-add-channel-button",
         channelPublicId: "_xdPbxhG",
         supportMultipleDensities: true,
+        size: "large",
       });
 
       document.body.appendChild(script);
