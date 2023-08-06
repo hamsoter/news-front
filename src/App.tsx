@@ -1,5 +1,6 @@
 import { Box, Button, Container } from "@mui/material";
 import Header from "./layout/Header";
+import KakaoChannelButton from "./components/KakaoChannelButton";
 
 function App() {
   return (
@@ -9,9 +10,7 @@ function App() {
     >
       <Header />
       <Box display="flex" justifyContent="center" padding={1}>
-        <Button color="secondary" variant="outlined">
-          카카오톡 채널 추가하기
-        </Button>
+        <KakaoChannelButton></KakaoChannelButton>
       </Box>
     </Container>
   );
