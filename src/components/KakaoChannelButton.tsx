@@ -14,7 +14,7 @@ function KakaoChannelButton() {
 
       window.Kakao.Channel.createAddChannelButton({
         container: "#kakao-add-channel-button",
-        channelPublicId: "_xdPbxhG",
+        channelPublicId: "_xhjxjxhG",
         supportMultipleDensities: true,
         size: "large",
       });
