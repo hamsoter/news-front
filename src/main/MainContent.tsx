@@ -1,14 +1,7 @@
-import React from "react";
 import KakaoChannelButton from "../components/KakaoChannelButton";
 import { Box, Typography } from "@mui/material";
 
 function MainContent() {
-  const selectedDay = new Date();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const stringDay = `${selectedDay.getFullYear()}.${
-    selectedDay.getMonth() + 1
-  }.${selectedDay.getDate()}`;
-
   return (
     <>
       <Typography
