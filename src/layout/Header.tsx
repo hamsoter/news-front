@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <AppBar
       position="static"
-      sx={{ background: "#FEEEBD", color: "#121212", boxShadow: "0 0 0 0 !important" }}
+      sx={{ background: "#F0F0F0", color: "#121212", boxShadow: "0 0 0 0 !important" }}
     >
       <Toolbar variant="dense">
         <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>

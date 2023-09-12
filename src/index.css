@@ -128,7 +128,7 @@ table {
   border-spacing: 0;
 }
 body {
-  background-color: #ef7625;
+  background-color: #102c57;
 }
 @font-face {
   font-family: "Pretendard-Regular";
@@ -136,4 +136,13 @@ body {
     format("woff");
   font-weight: 400;
   font-style: normal;
+}
+.example-custom-input {
+  background-color: transparent;
+  color: #121212;
+  cursor: pointer;
+  width: 140px;
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 2px solid #121212;
 }

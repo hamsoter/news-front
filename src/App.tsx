@@ -6,7 +6,14 @@ function App() {
   return (
     <Container
       maxWidth={"xs"}
-      sx={{ padding: "0 !important", bgcolor: "#FEEEBD", height: "100vh" }}
+      sx={{
+        padding: "0 !important",
+        bgcolor: "#F0F0F0",
+        height: "100vh",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+      }}
     >
       <Header />
       <MainContent></MainContent>
