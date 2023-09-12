@@ -7,6 +7,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { ko } from "date-fns/esm/locale";
 import ReactDatePicker, { ReactDatePickerProps, registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { add, sub } from "date-fns/esm";
 
 interface RefProps extends Omit<ReactDatePickerProps, "onChange"> {
   onClick?(): void;
@@ -37,7 +38,15 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
 
   return (
     <Box sx={{ display: "flex", width: "100%", justifyContent: "space-between" }}>
-      <Button sx={{ color: "#121212" }}>
+      <Button
+        sx={{ color: "#121212" }}
+        onClick={() => {
+          if (date) {
+            const newDate = sub(date, { days: 1 });
+            setDate(newDate);
+          }
+        }}
+      >
         <ArrowBackIcon />
       </Button>
       <Box>
@@ -53,7 +62,15 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
           maxDate={new Date(today)}
         />
       </Box>
-      <Button sx={{ color: "#121212" }}>
+      <Button
+        sx={{ color: "#121212" }}
+        onClick={() => {
+          if (date) {
+            const newDate = add(date, { days: 1 });
+            setDate(newDate);
+          }
+        }}
+      >
         <ArrowForwardIcon />
       </Button>
     </Box>
