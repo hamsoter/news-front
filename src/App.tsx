@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
 import Header from "./layout/Header";
 import MainContent from "./main/MainContent";
+import Footer from "./layout/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     >
       <Header />
       <MainContent></MainContent>
+      <Footer></Footer>
     </Container>
   );
 }
