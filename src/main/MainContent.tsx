@@ -34,6 +34,13 @@ function MainContent() {
   // 화면에 그릴 뉴스 요약본 배열
   const [newsList, setNewsList] = useState<string[]>([]);
 
+  // 뉴스 전문 string
+  const newsFullText = selectedDate
+    ? `${selectedDate?.getFullYear()}년 ${
+        selectedDate?.getMonth() + 1
+      }월 ${selectedDate?.getDate()}일의 주요 뉴스입니다 \n\n` + newsList.join("\n\n")
+    : "...";
+
   useEffect(() => {
     const fetchData = async () => {
       // 날짜를 기반으로 뉴스를 요청
@@ -48,7 +55,7 @@ function MainContent() {
   return (
     <>
       <CustomDatePicker date={selectedDate} setDate={setSelectedDate} />
-      <Share newsFullText={newsList.join("\n\n")}></Share>
+      <Share newsFullText={newsFullText}></Share>
       {/* FIXME: skeleton */}
       {newsList.length ? <News newsList={newsList} /> : null}
     </>
