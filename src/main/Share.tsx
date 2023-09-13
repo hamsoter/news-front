@@ -13,7 +13,7 @@ function Share({ newsFullText }: Props) {
       <Divider sx={{ fontSize: 14 }}>이 소식을 공유해보세요</Divider>
       <Box display={"flex"} justifyContent={"center"} marginY={1}>
         <CopyButton content={newsFullText} />
-        <KakaoShare />
+        <KakaoShare content={newsFullText} />
       </Box>
     </Box>
   );
