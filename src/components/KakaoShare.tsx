@@ -12,8 +12,6 @@ function KakaoShare({ content }: Props) {
     window.Kakao.cleanup();
     // 자신의 js 키를 넣어준다.
     window.Kakao.init("3a26d1c7d4f0c60290a93c1fea1feb9c");
-    // 잘 적용되면 true 를 뱉는다.
-    console.log(window.Kakao.isInitialized());
   }, []);
 
   const shareKakao = () => {
