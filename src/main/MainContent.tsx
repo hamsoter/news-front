@@ -38,7 +38,7 @@ function MainContent() {
   const newsFullText = selectedDate
     ? `${selectedDate?.getFullYear()}년 ${
         selectedDate?.getMonth() + 1
-      }월 ${selectedDate?.getDate()}일의 주요 뉴스입니다 \n\n` + newsList.join("\n\n")
+      }월 ${selectedDate?.getDate()}일의 주요 뉴스입니다. \n\n` + newsList.join("\n\n")
     : "...";
 
   useEffect(() => {

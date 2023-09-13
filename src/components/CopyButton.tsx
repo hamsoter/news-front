@@ -7,7 +7,6 @@ type Props = {
 };
 
 function CopyButton({ content }: Props) {
-  console.log(content);
   return (
     <Button
       variant="outlined"
