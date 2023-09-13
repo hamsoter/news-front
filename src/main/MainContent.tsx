@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CustomDatePicker from "../components/CustomDatePicker";
 import { apiTest } from "../utils/common";
 import News from "./News";
+import Share from "./Share";
 
 const dummy: string[] = [
   `보는 길을 곳으로 기관과 풍부하게 것이다. 그들의 이상, 뼈 놀이 우리는 무엇을 속에서 되는
@@ -48,6 +49,7 @@ function MainContent() {
   return (
     <>
       <CustomDatePicker date={selectedDate} setDate={setSelectedDate} />
+      <Share></Share>
       {/* FIXME: skeleton */}
       {newsList.length ? <News newsList={newsList} /> : null}
     </>
