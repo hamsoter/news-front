@@ -2,9 +2,20 @@ import React from "react";
 import { Button } from "@mui/material";
 import CopyAllIcon from "@mui/icons-material/CopyAll";
 
-function CopyButton() {
+type Props = {
+  content: string;
+};
+
+function CopyButton({ content }: Props) {
+  console.log(content);
   return (
-    <Button variant="outlined" sx={{ marginX: 0.5 }}>
+    <Button
+      variant="outlined"
+      sx={{ marginX: 0.5 }}
+      onClick={() => {
+        window.navigator.clipboard.writeText(content);
+      }}
+    >
       전체 복사<CopyAllIcon fontSize="small"></CopyAllIcon>
     </Button>
   );

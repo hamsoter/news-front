@@ -45,11 +45,10 @@ function MainContent() {
     fetchData();
   }, [selectedDate]);
 
-  console.log(newsList);
   return (
     <>
       <CustomDatePicker date={selectedDate} setDate={setSelectedDate} />
-      <Share></Share>
+      <Share newsFullText={newsList.join("\n\n")}></Share>
       {/* FIXME: skeleton */}
       {newsList.length ? <News newsList={newsList} /> : null}
     </>
