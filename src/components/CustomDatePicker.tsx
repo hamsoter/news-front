@@ -40,7 +40,7 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
   );
 
   return (
-    <Box sx={{ display: "flex", width: "100%", justifyContent: "space-between" }}>
+    <Box sx={{ display: "flex", justifyContent: "space-between", px: 2 }}>
       <Button
         sx={{ color: "#121212" }}
         onClick={() => {
