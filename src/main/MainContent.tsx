@@ -55,9 +55,9 @@ function MainContent() {
   return (
     <>
       <CustomDatePicker date={selectedDate} setDate={setSelectedDate} />
-      <Share newsFullText={newsFullText}></Share>
       {/* FIXME: skeleton */}
       {newsList.length ? <News newsList={newsList} /> : null}
+      <Share newsFullText={newsFullText}></Share>
     </>
   );
 }
