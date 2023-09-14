@@ -7,7 +7,7 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { ko } from "date-fns/esm/locale";
 import ReactDatePicker, { ReactDatePickerProps, registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { add, compareAsc, sub } from "date-fns/esm";
+import { add, compareAsc, isBefore, sub } from "date-fns/esm";
 
 interface RefProps extends Omit<ReactDatePickerProps, "onChange"> {
   onClick?(): void;
@@ -25,6 +25,10 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
   // 선택된 날짜가 오늘 날짜인지 확인
   const isToday = (date ? compareAsc(sub(today, { days: 1 }), date) : -1) > 0 ? true : false;
   registerLocale("ko", ko);
+
+  const serviceStartDay = new Date(2023, 8, 14);
+
+  const isServiceStartDay = date ? isBefore(serviceStartDay, date) : false;
 
   const DateButton = forwardRef(
     ({ value, onClick }: RefProps, ref: React.Ref<HTMLButtonElement>) => (
@@ -60,6 +64,7 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
             setDate(newDate);
           }
         }}
+        disabled={!isServiceStartDay}
       >
         <ArrowBackIcon />
       </Button>
@@ -74,6 +79,7 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
           onChange={(date) => setDate(date)}
           customInput={<DateButton />}
           maxDate={new Date(today)}
+          minDate={new Date(2023, 8, 13)}
         />
       </Box>
       <Button
