@@ -1,6 +1,7 @@
 import { Box, Divider } from "@mui/material";
 import NewsItem from "../components/NewsItem";
 import { v4 as uuidv4 } from "uuid";
+import SkeletonNews from "../components/SkeletonNews";
 
 type Props = {
   newsList: string[];
@@ -21,7 +22,15 @@ function News({ newsList, startMent }: Props) {
       >
         {startMent}
       </Divider>
-      {newsList.length && newsList.map((item) => <NewsItem key={uuidv4()}>{item}</NewsItem>)}
+      {newsList.length > 0 ? (
+        newsList.map((item) => <NewsItem key={uuidv4()}>{item}</NewsItem>)
+      ) : (
+        <>
+          <SkeletonNews></SkeletonNews>
+          <SkeletonNews></SkeletonNews>
+          <SkeletonNews></SkeletonNews>
+        </>
+      )}
     </Box>
   );
 }
