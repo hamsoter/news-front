@@ -50,7 +50,6 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
         justifyContent: "space-between",
         px: 2,
         py: 1,
-        bgcolor: "#102C5710",
       }}
     >
       <Button

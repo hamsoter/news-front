@@ -11,7 +11,13 @@ function News({ newsList, startMent }: Props) {
   return (
     <Box sx={{ overflowY: "scroll" }}>
       <Divider
-        sx={{ color: "#121212", padding: 2, fontSize: 14, fontFamily: "Pretendard-Regular" }}
+        sx={{
+          color: "#121212",
+          bgcolor: "#102C5708",
+          padding: 2,
+          fontSize: 14,
+          fontFamily: "Pretendard-Regular",
+        }}
       >
         {startMent}
       </Divider>
