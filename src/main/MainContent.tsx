@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import CustomDatePicker from "../components/CustomDatePicker";
 import News from "./News";
 import Share from "./Share";

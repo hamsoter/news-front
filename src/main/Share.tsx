@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Divider } from "@mui/material";
 import CopyButton from "../components/CopyButton";
 import KakaoShare from "../components/KakaoShare";
