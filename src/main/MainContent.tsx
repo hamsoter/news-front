@@ -14,12 +14,14 @@ function MainContent() {
   const [newsList, setNewsList] = useState<string[]>([]);
   const [isError, setIsError] = useState<boolean>(false);
 
-  // 뉴스 전문 string
-  const newsFullText = selectedDate
+  const startMent = selectedDate
     ? `${selectedDate?.getFullYear()}년 ${
         selectedDate?.getMonth() + 1
-      }월 ${selectedDate?.getDate()}일의 주요 뉴스입니다. \n\n` + newsList.join("\n\n")
+      }월 ${selectedDate?.getDate()}일의 주요 뉴스입니다. \n\n`
     : "...";
+
+  // 뉴스 전문 string
+  const newsFullText = selectedDate ? startMent + newsList.join("\n\n") : "...";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -48,8 +50,11 @@ function MainContent() {
     <>
       <CustomDatePicker date={selectedDate} setDate={setSelectedDate} />
       {/* FIXME: skeleton */}
-
-      {isError && newsList.length < 1 ? <Error /> : <News newsList={newsList} />}
+      {isError && newsList.length < 1 ? (
+        <Error />
+      ) : (
+        <News newsList={newsList} startMent={startMent} />
+      )}
       {isError ? <></> : <Share newsFullText={newsFullText}></Share>}
     </>
   );

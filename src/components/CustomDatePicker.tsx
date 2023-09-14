@@ -29,7 +29,11 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
   const DateButton = forwardRef(
     ({ value, onClick }: RefProps, ref: React.Ref<HTMLButtonElement>) => (
       <Button
-        sx={{ color: "#121212", fontWeight: "bold" }}
+        sx={{
+          color: "#121212",
+          fontWeight: "bold",
+          fontFamily: "Pretendard-Regular",
+        }}
         className="example-custom-input"
         onClick={onClick}
         ref={ref}
@@ -40,7 +44,15 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
   );
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "space-between", px: 2 }}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        px: 2,
+        py: 1,
+        bgcolor: "#102C5710",
+      }}
+    >
       <Button
         sx={{ color: "#121212" }}
         onClick={() => {
