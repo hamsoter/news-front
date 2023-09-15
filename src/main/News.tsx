@@ -10,7 +10,7 @@ type Props = {
 
 function News({ newsList, startMent }: Props) {
   return (
-    <Box sx={{ overflowY: "scroll" }}>
+    <Box sx={{ overflowY: "scroll", pb: "110px" }}>
       <Divider
         sx={{
           color: "#121212",

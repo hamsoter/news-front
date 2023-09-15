@@ -1,6 +1,7 @@
 import { Box, Divider } from "@mui/material";
 import CopyButton from "../components/CopyButton";
 import KakaoShare from "../components/KakaoShare";
+import Footer from "../layout/Footer";
 
 type Props = {
   newsFullText: string;
@@ -16,6 +17,7 @@ function Share({ newsFullText }: Props) {
         <CopyButton content={newsFullText} />
         <KakaoShare content={newsFullText} />
       </Box>
+      <Footer></Footer>
     </Box>
   );
 }
