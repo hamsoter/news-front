@@ -11,6 +11,8 @@ import { useNavigate } from "react-router";
 function MainContent() {
   const linkDateString = location.pathname.slice(1);
 
+  console.log(linkDateString);
+
   // 뉴스를 받아볼 날짜
   const [selectedDate, setSelectedDate] = useState<Date | null>(
     linkDateString ? new Date(linkDateString) : new Date()
@@ -33,8 +35,10 @@ function MainContent() {
 
   useEffect(() => {
     // 루트로 들어왔을시 자동으로 link 변환
-    if (selectedDate) navigate(`/${formatDate}`);
+    if (!linkDateString) navigate(`/${formatDate}`);
+  }, []);
 
+  useEffect(() => {
     const fetchData = async () => {
       if (selectedDate) {
         // 날짜를 기반으로 뉴스를 요청
