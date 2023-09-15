@@ -23,12 +23,12 @@ function MainContent() {
   // 뉴스 전문 string
   const newsFullText = selectedDate ? startMent + newsList.join("\n\n") : "...";
 
+  const formatDate = format(selectedDate ? selectedDate : new Date(), "yyyy-MM-dd");
+
   useEffect(() => {
     const fetchData = async () => {
       if (selectedDate) {
         // 날짜를 기반으로 뉴스를 요청
-        // FIXME: apiTest => 실제 뉴스요청 api
-        const formatDate = format(selectedDate, "yyyy-MM-dd");
         const response: ResponseDataType = await getNews(
           `https://hello-world-shrill-shadow-fb88.dldnwn99.workers.dev/${formatDate}`
         );
@@ -55,7 +55,7 @@ function MainContent() {
       ) : (
         <News newsList={newsList} startMent={startMent} />
       )}
-      {isError ? <></> : <Share newsFullText={newsFullText}></Share>}
+      {isError ? <></> : <Share date={formatDate} newsFullText={newsFullText}></Share>}
     </>
   );
 }
