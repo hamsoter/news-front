@@ -6,6 +6,7 @@ import { format } from "date-fns/esm";
 import { getNews } from "../utils/api";
 import ResponseDataType from "../utils/type";
 import Error from "./Error";
+import { useNavigate } from "react-router";
 
 function MainContent() {
   // 뉴스를 받아볼 날짜
@@ -13,6 +14,7 @@ function MainContent() {
   // 화면에 그릴 뉴스 요약본 배열
   const [newsList, setNewsList] = useState<string[]>([]);
   const [isError, setIsError] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const startMent = selectedDate
     ? `${selectedDate?.getFullYear()}년 ${
@@ -26,13 +28,15 @@ function MainContent() {
   const formatDate = format(selectedDate ? selectedDate : new Date(), "yyyy-MM-dd");
 
   useEffect(() => {
+    // 루트로 들어왔을시 자동으로 link 변환
+    if (selectedDate) navigate(`/${formatDate}`);
+
     const fetchData = async () => {
       if (selectedDate) {
         // 날짜를 기반으로 뉴스를 요청
         const response: ResponseDataType = await getNews(
           `https://hello-world-shrill-shadow-fb88.dldnwn99.workers.dev/${formatDate}`
         );
-
         if (response.success) {
           setNewsList(response.data);
           setIsError(false);
@@ -49,7 +53,6 @@ function MainContent() {
   return (
     <>
       <CustomDatePicker date={selectedDate} setDate={setSelectedDate} />
-      {/* FIXME: skeleton */}
       {isError && newsList.length < 1 ? (
         <Error />
       ) : (
