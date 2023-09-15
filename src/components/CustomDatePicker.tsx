@@ -72,7 +72,7 @@ const CustomDatePicker = ({ date, setDate }: Props) => {
         <ReactDatePicker
           selected={date}
           popperPlacement="bottom"
-          dateFormat={"yyyy년 MM월 dd일"}
+          dateFormat={"yy년 MM월 dd일"}
           dateFormatCalendar="yyyy년 MM월"
           locale="ko"
           showPopperArrow={false}
