@@ -11,9 +11,10 @@ import { useNavigate } from "react-router";
 function MainContent() {
   const linkDateString = location.pathname.slice(1);
 
-  console.log(linkDateString);
   // 뉴스를 받아볼 날짜
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date(linkDateString));
+  const [selectedDate, setSelectedDate] = useState<Date | null>(
+    linkDateString ? new Date(linkDateString) : new Date()
+  );
   // 화면에 그릴 뉴스 요약본 배열
   const [newsList, setNewsList] = useState<string[]>([]);
   const [isError, setIsError] = useState<boolean>(false);
