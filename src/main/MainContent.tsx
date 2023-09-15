@@ -39,6 +39,7 @@ function MainContent() {
   }, []);
 
   useEffect(() => {
+    navigate(`/${formatDate}`);
     const fetchData = async () => {
       if (selectedDate) {
         // 날짜를 기반으로 뉴스를 요청
