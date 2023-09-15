@@ -8,7 +8,7 @@ type Props = {
 
 function Share({ newsFullText }: Props) {
   return (
-    <Box sx={{ paddingTop: 2 }}>
+    <Box sx={{ paddingTop: 2, position: "absolute", bottom: 0, bgcolor: "#F0F0F0", width: "100%" }}>
       <Divider sx={{ fontSize: 14, paddingBottom: 1, fontFamily: "Pretendard-Regular" }}>
         이 소식을 공유해보세요
       </Divider>

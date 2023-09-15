@@ -14,6 +14,7 @@ function App() {
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
+        position: "relative",
       }}
     >
       <Header />
