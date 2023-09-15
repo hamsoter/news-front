@@ -5,10 +5,9 @@ import Footer from "../layout/Footer";
 
 type Props = {
   newsFullText: string;
-  date: string;
 };
 
-function Share({ newsFullText, date }: Props) {
+function Share({ newsFullText }: Props) {
   return (
     <Box sx={{ paddingTop: 2, position: "absolute", bottom: 0, bgcolor: "#F0F0F0", width: "100%" }}>
       <Divider sx={{ fontSize: 14, paddingBottom: 1, fontFamily: "Pretendard-Regular" }}>
@@ -16,7 +15,7 @@ function Share({ newsFullText, date }: Props) {
       </Divider>
       <Box display={"flex"} justifyContent={"center"} mt={1} mb={2}>
         <CopyButton content={newsFullText} />
-        <KakaoShare content={newsFullText} date={date} />
+        <KakaoShare content={newsFullText} />
       </Box>
       <Footer></Footer>
     </Box>

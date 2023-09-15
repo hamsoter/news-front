@@ -3,10 +3,9 @@ import { Button } from "@mui/material";
 
 type Props = {
   content: string;
-  date: string;
 };
 
-function KakaoShare({ content, date }: Props) {
+function KakaoShare({ content }: Props) {
   // 재랜더링시에 실행되게 해준다.
   useEffect(() => {
     // init 해주기 전에 clean up 을 해준다.
@@ -15,7 +14,7 @@ function KakaoShare({ content, date }: Props) {
     window.Kakao.init("3a26d1c7d4f0c60290a93c1fea1feb9c");
   }, []);
 
-  const thisHref = "dancing-froyo-37e83e.netlify.app";
+  const thisHref = document.location.href;
 
   const shareKakao = () => {
     window.Kakao.Share.sendDefault({
@@ -23,8 +22,8 @@ function KakaoShare({ content, date }: Props) {
       text: content,
       link: {
         // FIXME: url 배포용 링크로 수정
-        mobileWebUrl: `${thisHref}/${date}`,
-        webUrl: `${thisHref}/${date}`,
+        mobileWebUrl: `${thisHref}`,
+        webUrl: `${thisHref}`,
       },
     });
   };
