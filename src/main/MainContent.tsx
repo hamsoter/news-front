@@ -61,7 +61,7 @@ function MainContent() {
       ) : (
         <News newsList={newsList} startMent={startMent} />
       )}
-      {isError ? <></> : <Share date={formatDate} newsFullText={newsFullText}></Share>}
+      {isError ? <></> : <Share newsFullText={newsFullText}></Share>}
     </>
   );
 }

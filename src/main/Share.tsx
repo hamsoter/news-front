@@ -4,10 +4,9 @@ import KakaoShare from "../components/KakaoShare";
 
 type Props = {
   newsFullText: string;
-  date: string;
 };
 
-function Share({ newsFullText, date }: Props) {
+function Share({ newsFullText }: Props) {
   return (
     <Box sx={{ paddingTop: 2 }}>
       <Divider sx={{ fontSize: 14, paddingBottom: 1, fontFamily: "Pretendard-Regular" }}>
@@ -15,7 +14,7 @@ function Share({ newsFullText, date }: Props) {
       </Divider>
       <Box display={"flex"} justifyContent={"center"} mt={1} mb={2}>
         <CopyButton content={newsFullText} />
-        <KakaoShare content={newsFullText} date={date} />
+        <KakaoShare content={newsFullText} />
       </Box>
     </Box>
   );
