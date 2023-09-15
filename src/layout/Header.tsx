@@ -8,7 +8,7 @@ const Header = () => {
     >
       <Toolbar variant="dense">
         <Typography variant="h6" fontFamily={"Pretendard-Regular"} component="div">
-          오늘의 한줄 뉴스
+          오늘의 짧은 뉴스
         </Typography>
       </Toolbar>
     </AppBar>
